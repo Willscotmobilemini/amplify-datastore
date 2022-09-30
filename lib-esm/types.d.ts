@@ -194,7 +194,7 @@ export declare type PersistentModel = Readonly<{
 } & Record<string, any>>;
 export declare type ModelInit<T, K extends PersistentModelMetaData = {
     readOnlyFields: 'createdAt' | 'updatedAt';
-}> = Omit<T, 'id' | K['readOnlyFields']>;
+}> = Partial<T>;
 declare type DeepWritable<T> = {
     -readonly [P in keyof T]: T[P] extends TypeName<T[P]> ? T[P] : DeepWritable<T[P]>;
 };

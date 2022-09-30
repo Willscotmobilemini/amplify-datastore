@@ -11,7 +11,7 @@ export declare const utils: {
         id: string;
     } & Record<string, any>>>(modelConstructor: import("./types").PersistentModelConstructor<T_1, {
         readOnlyFields: "createdAt" | "updatedAt";
-    }>, init: Pick<T_1, Exclude<keyof T_1, "id" | "createdAt" | "updatedAt">> & Partial<import("./types").ModelInstanceMetadata>) => T_1, getModelConstructorByModelName: (namsespaceName: string, modelName: string) => import("./types").PersistentModelConstructor<any, {
+    }>, init: Partial<T_1> & Partial<import("./types").ModelInstanceMetadata>) => T_1, getModelConstructorByModelName: (namsespaceName: string, modelName: string) => import("./types").PersistentModelConstructor<any, {
         readOnlyFields: "createdAt" | "updatedAt";
     }>) => {
         modelName: string;

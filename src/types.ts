@@ -362,7 +362,7 @@ export type ModelInit<
 	K extends PersistentModelMetaData = {
 		readOnlyFields: 'createdAt' | 'updatedAt';
 	}
-> = Omit<T, 'id' | K['readOnlyFields']>;
+> = Partial<T>;
 type DeepWritable<T> = {
 	-readonly [P in keyof T]: T[P] extends TypeName<T[P]>
 		? T[P]
