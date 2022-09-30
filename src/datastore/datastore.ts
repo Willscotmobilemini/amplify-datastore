@@ -432,11 +432,11 @@ const createModelClass = <T extends PersistentModel>(
 							? <ModelInstanceMetadata>(<unknown>init)
 							: <ModelInstanceMetadata>{};
 					const {
-						id: _id,
 						_version,
 						_lastChangedAt,
 						_deleted,
 					} = modelInstanceMetadata;
+					const _id = init.id || modelInstanceMetadata.id;
 
 					// instancesIds are set by modelInstanceCreator, it is accessible only internally
 					const isInternal = _id !== null && _id !== undefined;
